@@ -51,7 +51,8 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
 #define CORETEMP_PATH "/sys/devices/platform/coretemp.0"
-#define APPLESMC_PATH "/sys/devices/platform/applesmc.768"
+/* #define APPLESMC_PATH "/sys/devices/platform/applesmc.768" */
+#define APPLESMC_PATH "/sys/bus/acpi/drivers/applesmc/APP0001:00"
 
 /* temperature thresholds
  * low_temp - temperature below which fan speed will be at minimum
@@ -273,7 +274,8 @@ t_fans *retrieve_fans()
     char *path_fan_max = NULL;
     char *path_fan_min = NULL;
 
-    const char *path_begin = "/sys/devices/platform/applesmc.768/fan";
+    /* const char *path_begin = "/sys/devices/platform/applesmc.768/fan"; */
+    const char *path_begin = "/sys/bus/acpi/drivers/applesmc/APP0001:00/fan";
     const char *path_output_end = "_output";
     const char *path_label_end = "_label";
     const char *path_man_end = "_manual";
